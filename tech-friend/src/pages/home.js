@@ -154,8 +154,10 @@ export default function Home() {
             positionX={0}
             positionY={-250}
             positionZ={-30}>
+              <a href='/phone-donation'>
             <span>DONATE</span>
             <span>PHONE</span>
+            </a>
           </HTMLContent>
         </Suspense>
       </Canvas>
