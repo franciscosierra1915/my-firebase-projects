@@ -19,7 +19,7 @@ export default function Header() {
               <a href='/'>solutions</a>
             </li> */}
             <li>
-              <a href='/'>login</a>
+              <a href='/login'>login</a>
             </li>
             <li className='btn'>
               <a href='/'>About Frank</a>
