@@ -10,7 +10,7 @@ import { AnimatePresence } from "framer-motion";
 
 import Home from './pages/home';
 import Discover from './pages/discover';
-import Login from './pages/login';
+// import Login from './pages/login';
 import CameraDonation from './pages/cameraDonation';
 import LaptopDonation from './pages/laptopDonation';
 import PhoneDonation from './pages/phoneDonation';
@@ -22,7 +22,7 @@ const App = () => {
       <AnimatePresence initial={false} exitBeforeEnter>
         <Route exact path='/' render={() => <Home/>}/>
         <Route exact path='/discover' render={() => <Discover/>}/>
-        <Route exact path='/login' render={() => <Login/>}/>
+        {/* <Route exact path='/login' render={() => <Login/>}/> */}
         <Route exact path='/camera-donation' render={() => <CameraDonation/>}/>
         <Route exact path='/laptop-donation' render={() => <LaptopDonation/>}/>
         <Route exact path='/phone-donation' render={() => <PhoneDonation/>}/>
