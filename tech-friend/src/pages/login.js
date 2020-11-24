@@ -7,7 +7,7 @@ import Header from "../components/header";
 // Page State
 import state from "../components/state";
 //App
-import { db, auth } from '../firebase';
+import { auth } from '../firebase';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
@@ -26,11 +26,10 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    width: 500,
+    height: 500,
+    backgroundColor: '#0093E9',
+    padding: theme.spacing(15, 20, 3),
   },
 }));
 
@@ -97,7 +96,7 @@ export default function Login() {
         onScroll={onScroll}>
           <div className='login'>
             {/* {user?.displayName ? <h3>Hi {user.displayName}</h3> : <h3>Signin!</h3>} */}
-            <Modal open={open} onClose={() => setOpen(false)}>
+            <Modal className="modal" open={open} onClose={() => setOpen(false)}>
               <div style={modalStyle} className={classes.paper}>
                 <form className='app_signup'>
                   <center>
@@ -108,7 +107,8 @@ export default function Login() {
                     placeholder='email'
                     type='text'
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}/>
+                    onChange={(e) => setEmail(e.target.value)}
+                    />
                     <Input
                     placeholder='password'
                     type='password'
@@ -119,12 +119,12 @@ export default function Login() {
                     type='username'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}/>
-                    <Button type='submit' onClick={signUp} >Sign Up</Button>
+                    <Button type='submit' onClick={signUp} style={{color: '#F8F8FF'}}>Sign Up</Button>
                     </center>
                     </form>
                     </div>
                     </Modal>
-                    <Modal open={openSignIn} onClose={() => setOpenSignIn(false)}>
+                    <Modal className="modal" open={openSignIn} onClose={() => setOpenSignIn(false)}>
                       <div style={modalStyle} className={classes.paper}>
                         <form className='app_login'>
                           <center>
@@ -141,7 +141,7 @@ export default function Login() {
                             type='password'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}/>
-                            <Button type='submit'onClick={signIn} >Sign In</Button>
+                            <Button type='submit'onClick={signIn} style={{color: '#F8F8FF'}}>Sign In</Button>
                             </center>
                             </form>
                             </div>

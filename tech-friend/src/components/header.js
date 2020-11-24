@@ -16,7 +16,7 @@ export default function Header() {
               <a href='/login'>login</a>
             </li>
             <li className='btn'>
-              <a href='/'>About Frank</a>
+              <a href='/about'>About Frank</a>
             </li>
           </ul>
         </nav>
