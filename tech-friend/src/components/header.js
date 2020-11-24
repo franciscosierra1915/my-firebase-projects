@@ -6,18 +6,12 @@ export default function Header() {
   return (
     <header>
       <div className='header-inner'>
-        <div className='logo' href='/'><span>TECH FRIEND</span><img className='logo-icon' src={logo} alt="logo"/></div>
+        <a href='/'><div className='logo'><span>TECH FRIEND</span><img className='logo-icon' src={logo} alt="logo"/></div></a>
         <nav>
           <ul>
             <li>
               <a href='/discover'>discover</a>
             </li>
-            {/* <li>
-              <a href='/'>products</a>
-            </li>
-            <li>
-              <a href='/'>solutions</a>
-            </li> */}
             <li>
               <a href='/login'>login</a>
             </li>

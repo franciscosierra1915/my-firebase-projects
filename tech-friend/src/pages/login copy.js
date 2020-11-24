@@ -1,11 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import { db, auth } from './firebase';
+import React, { useRef, useEffect, useState } from "react";
+//Styles
+import '../styles/login.css';
+//Components
+import Header from "../components/header";
+// Page State
+import state from "../components/state";
+//App
+import { db, auth } from '../firebase';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
-import ImageUpload from './ImageUpload';
-import Post from './Post';
+import ImageUpload from '../components/ImageUpload';
+import Post from '../components/Post';
 
 function getModalStyle() {
   const top = 50;
@@ -29,7 +35,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function App() {
+export default function Login() {
+
+  //Scroll
+  const scrollArea = useRef();
+  const onScroll = (e) => (state.top.current = e.target.scrollTop);
+  useEffect(() => void onScroll({ target: scrollArea.current }), []);
+
+    //App
+
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
   const [posts, setPosts] = useState([]);
@@ -88,7 +102,13 @@ function App() {
   }
 
   return (
-    <div className='app'>
+    <>
+    <Header/> 
+      <div
+        className='scrollArea'
+        ref={scrollArea}
+        onScroll={onScroll}>
+<div className='app'>
       {user?.displayName ? (<ImageUpload username={user.displayName}/>) : <h3>Sorry, but you need to login to upload</h3>}
       <Modal
       open={open}
@@ -122,7 +142,7 @@ function App() {
       </Modal>
       <Modal
       open={openSignIn}
-      onClose={() => openSignIn(false)}>
+      onClose={() => setOpenSignIn(false)}>
         <div style={modalStyle} className={classes.paper}>
           <form className='app_login'>
           <center>
@@ -168,7 +188,8 @@ function App() {
           ))
       }
     </div>
+      </div>
+    </>
   );
 }
 
-export default App;
