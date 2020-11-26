@@ -2,13 +2,14 @@
   box-sizing: border-box;
 }
 
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f15946;
   transition: 0.4s ease-in-out;
 }
 
@@ -48,6 +49,8 @@ body,
 }
 
 header {
+  font-family: "Fjalla One";
+  letter-spacing: 0.2rem;
   position: absolute;
   z-index: 99;
   width: 100%;
@@ -74,9 +77,11 @@ header {
             a {
               color: #fff;
               font-weight: 600;
-              background: #23232a;
+              background: #FEBE10;
               padding: 16px 24px;
-              border-radius: 10px;
+              border: 2px solid black;
+              box-shadow: 1.5px 1.5px 1px #FBAB7E, 1.5px 1.5px 1px 2px black;
+              border-radius: 2px;
             }
           }
           a {
@@ -96,8 +101,10 @@ header {
   width: 100%;
   margin: 0 auto;
   color: #fff;
+
   span {
     display: block;
+    text-shadow: 2px 2px #FBAB7E,  1.5px 6px 2px black;
   }
   @media (max-width: 1440px) {
     font-size: 6rem;

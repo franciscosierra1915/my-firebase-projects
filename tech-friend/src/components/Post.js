@@ -4,7 +4,7 @@ import Avatar from '@material-ui/core/Avatar';
 import { db } from '../firebase';
 import firebase from 'firebase';
 
-function Post({ user, postId, username, caption, imageUrl }) {
+function Post({ user, postId, username, caption, imageUrl, avatar }) {
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState('');
 
@@ -42,17 +42,17 @@ function Post({ user, postId, username, caption, imageUrl }) {
             <div className='post_header'>
             <Avatar 
             className='post_avatar'
-            alt="frank01"
-            src='/static/images//avatar/1.jpg'
+            alt="post_avatar"
+            src={avatar}
             />
             <h3>{username}</h3>
             </div>
             <img className='post_image' src={imageUrl} alt='first-posted'/>
-            <h4 className='post_text'><strong>{username}</strong>{caption}</h4>
+            <h4 className='post_text'><strong className='caption'>{username}</strong>{caption}</h4>
             <div className='post_comments'>
                 {comments.map(({ commentId, comment}) => (
                     <p key={commentId}>
-                        <strong>{comment.username}</strong>{comment.text}
+                        <strong className='caption'>{comment.username}</strong>{comment.text}
                     </p>
                 ))
                 }

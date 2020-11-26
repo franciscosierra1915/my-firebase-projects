@@ -90,75 +90,75 @@ export default function Login() {
   return (
     <>
     <Header/> 
-      <div
-        className='scrollArea'
-        ref={scrollArea}
-        onScroll={onScroll}>
-          <div className='login'>
-            {/* {user?.displayName ? <h3>Hi {user.displayName}</h3> : <h3>Signin!</h3>} */}
-            <Modal className="modal" open={open} onClose={() => setOpen(false)}>
-              <div style={modalStyle} className={classes.paper}>
-                <form className='app_signup'>
-                  <center>
-                  <img src={logo}
-                    className='app_headerImage'
-                    alt='instagram_logo_header'/>
-                    <Input
-                    placeholder='email'
-                    type='text'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <Input
-                    placeholder='password'
-                    type='password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}/>
-                    <Input
-                    placeholder='username'
-                    type='username'
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}/>
-                    <Button type='submit' onClick={signUp} style={{color: '#F8F8FF'}}>Sign Up</Button>
-                    </center>
-                    </form>
-                    </div>
-                    </Modal>
-                    <Modal className="modal" open={openSignIn} onClose={() => setOpenSignIn(false)}>
-                      <div style={modalStyle} className={classes.paper}>
-                        <form className='app_login'>
-                          <center>
-                            <img src={logo} 
-                            className='app_headerImage'
-                            alt='instagram_logo_header'/>
-                            <Input
-                            placeholder='email'
-                            type='text'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}/>
-                            <Input
-                            placeholder='password'
-                            type='password'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}/>
-                            <Button type='submit'onClick={signIn} style={{color: '#F8F8FF'}}>Sign In</Button>
-                            </center>
-                            </form>
-                            </div>
-                            </Modal>
-                            {
-                            user ?
-                            (<Button className="login-buttons" onClick={() => auth.signOut()} style={{color: '#F8F8FF'}}>Logout</Button>) 
-                            : 
-                            (<div className='app_loginContainer'>
-                                <Button className="login-buttons" onClick={() => setOpenSignIn(true)} style={{color: '#F8F8FF'}}>Sign In</Button>
-                                <Button className="login-buttons" onClick={() => setOpen(true)} style={{color: '#F8F8FF'}}>Sign Up</Button>
-                              </div>
-                            )
-                            }
-               </div>
-        </div>
+    <div
+    className='scrollArea'
+    ref={scrollArea}
+    onScroll={onScroll}>
+      <div className='login'>
+        {/* {user?.displayName ? <h3>Hi {user.displayName}</h3> : <h3>Signin!</h3>} */}
+        <Modal className="modal" open={open} onClose={() => setOpen(false)}>
+          <div style={modalStyle} className={classes.paper}>
+            <form className='app_signup'>
+              <center>
+                <img src={logo}
+                className='app_headerImage'
+                alt='instagram_logo_header'/>
+                <Input
+                placeholder='email'
+                type='text'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                />
+                <Input
+                placeholder='password'
+                type='password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}/>
+                <Input
+                placeholder='username'
+                type='username'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}/>
+                <Button type='submit' onClick={signUp} style={{ background: '#F7CE68', color: '#F8F8FF'}}>Sign Up</Button>
+                </center>
+                </form>
+                </div>
+                </Modal>
+                <Modal className="modal" open={openSignIn} onClose={() => setOpenSignIn(false)}>
+                  <div style={modalStyle} className={classes.paper}>
+                    <form className='app_login'>
+                      <center>
+                        <img src={logo} 
+                        className='app_headerImage'
+                        alt='instagram_logo_header'/>
+                        <Input
+                        placeholder='email'
+                        type='text'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}/>
+                        <Input
+                        placeholder='password'
+                        type='password'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}/>
+                        <Button type='submit'onClick={signIn} style={{ background: '#F7CE68', color: '#F8F8FF'}}>Sign In</Button>
+                        </center>
+                        </form>
+                        </div>
+                        </Modal>
+                        {
+                        user ?
+                        (<Button className="login-buttons" onClick={() => auth.signOut()} style={{color: '#F8F8FF'}}>Logout</Button>) 
+                        : 
+                        (<div className='app_loginContainer'>
+                            <Button className="login-buttons" onClick={() => setOpenSignIn(true)} style={{color: '#F8F8FF'}}>Sign In</Button>
+                            <Button className="login-buttons" onClick={() => setOpen(true)} style={{color: '#F8F8FF'}}>Sign Up</Button>
+                          </div>
+                        )
+                        }
+      </div>
+    </div>
+
     </>
   );
 }
-

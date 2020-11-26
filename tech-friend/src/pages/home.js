@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState, Suspense } from "react";
-
 //Styles
 import "../styles/home.scss";
 //Components
@@ -100,8 +99,6 @@ function Loader() {
   );
 }
 
-
-
 export default function Home() {
   const [events, setEvents] = useState();
   const domContent = useRef();
@@ -127,19 +124,19 @@ export default function Home() {
             positionX={0}
             positionY={250}
             positionZ={-100}>
-            <a href='/camera-donation'>
+            <a href='/donation'>
             <span>DONATE</span>
             <span>CAMERA</span>
             </a>
           </HTMLContent>
           <HTMLContent
             domContent={domContent}
-            bgColor='#571ec1'
+            bgColor='#FEBE10'
             modelPath='/laptop.gltf'
             positionX={0}
             positionY={0}
             positionZ={50}>
-              <a href='/laptop-donation'>
+              <a href='/donation'>
             <span id='laptop'>
             DONATE
             <br/>
@@ -149,12 +146,12 @@ export default function Home() {
           </HTMLContent>
           <HTMLContent
             domContent={domContent}
-            bgColor='#636567'
+            bgColor='#468af1'
             modelPath='/iphone.gltf'
             positionX={0}
             positionY={-250}
             positionZ={-30}>
-              <a href='/phone-donation'>
+              <a href='/donation'>
             <span>DONATE</span>
             <span>PHONE</span>
             </a>
@@ -170,7 +167,6 @@ export default function Home() {
         <div style={{ position: "sticky", top: 0 }} ref={domContent} />
         <div style={{ height: `${state.pages * 100}vh` }} />
       </div>
-      
     </>
   );
 }

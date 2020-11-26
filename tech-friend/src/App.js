@@ -5,14 +5,11 @@ import { AnimatePresence } from "framer-motion";
 //Pages
 import Home from './pages/home';
 import Discover from './pages/discover';
-import CameraDonation from './pages/cameraDonation';
-import LaptopDonation from './pages/laptopDonation';
-import PhoneDonation from './pages/phoneDonation';
+import Donation from './pages/donation';
 import Login from './pages/login';
 import About from './pages/about';
 //App
 import { auth } from './firebase';
-
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -35,14 +32,11 @@ const App = () => {
   return (
     <Router>
       <AnimatePresence initial={false} exitBeforeEnter>
-        {user ? <div>Hi {user.displayName}</div> : null}
-        <Route exact path='/' render={() => <Home/>}/>
-        <Route exact path='/login' render={() => <Login/>}/>
-        <Route exact path='/about' render={() => <About/>}/>
-        <Route exact path='/discover' render={() => <Discover/>}/>
-        <Route exact path='/camera-donation' render={() => <CameraDonation/>}/>
-        <Route exact path='/laptop-donation' render={() => <LaptopDonation/>}/>
-        <Route exact path='/phone-donation' render={() => <PhoneDonation/>}/>
+        <Route exact path='/' render={() => <Home user={user ? user : null}/>}/>
+        <Route exact path='/login' render={() => <Login user={user ? user : null}/>}/>
+        <Route exact path='/about' render={() => <About user={user ? user : null}/>}/>
+        <Route exact path='/discover' render={() => <Discover user={user ? user : null}/>}/>
+        <Route exact path='/donation' render={() => <Donation user={user ? user : null}/>}/>
       </AnimatePresence>
     </Router>
   );
