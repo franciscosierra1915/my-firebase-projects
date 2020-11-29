@@ -11,6 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: 0.4s ease-in-out;
+  background: #468af1;
 }
 
 html,
@@ -91,6 +92,15 @@ header {
           }
         }
       }
+      select {
+        color: #fff;
+        font-weight: 600;
+        background: #FEBE10;
+        padding: 16px 24px;
+        border: 2px solid black;
+        box-shadow: 1.5px 1.5px 1px #FBAB7E, 1.5px 1.5px 1px 2px black;
+        border-radius: 2px;
+      }
     }
   }
 }
@@ -148,3 +158,12 @@ a:visited { text-decoration: none; color:#fff; }
 a:hover { text-decoration: none; color:#fff; }
 a:focus { text-decoration: none; color:#fff; }
 a:hover, a:active { text-decoration: none; color:#fff }
+
+nav select {
+  display: none;
+}
+@media (max-width: 960px) {
+  nav li     { display: none; }
+  nav select { display: inline-block; }
+  // header {   background-color: #f15946; }
+}

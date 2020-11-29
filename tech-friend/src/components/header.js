@@ -1,7 +1,11 @@
 import React from "react";
 import logo from '../images/tech-friend-logo.png'
+//Redirect
+import { useHistory } from "react-router-dom";
 
-export default function Header() {
+export default function Header({user}) {
+
+  let history = useHistory();
 
   return (
     <header>
@@ -13,12 +17,18 @@ export default function Header() {
               <a href='/discover'>discover</a>
             </li>
             <li>
-              <a href='/login'>login</a>
+              <a href='/login'>{user ? 'Logout' : 'Login'}</a>
             </li>
             <li className='btn'>
               <a href='/about'>About Frank</a>
             </li>
           </ul>
+          <select onChange={(e) => history.push(e.target.value)}>
+            <option value=''>Menu</option> 
+            <option value='/discover'>Discover</option> 
+            <option value='/login'>{user ? 'Logout' : 'Login'}</option>
+            <option value='/about'>About Frank</option> 
+          </select> 
         </nav>
       </div>
     </header>

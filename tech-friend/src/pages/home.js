@@ -2,16 +2,12 @@ import React, { useRef, useEffect, useState, Suspense } from "react";
 //Styles
 import "../styles/home.scss";
 //Components
-import Header from "../components/header";
 import { Section } from "../components/section";
-
 // Page State
 import state from "../components/state";
-
 // R3F
 import { Canvas, useFrame } from "react-three-fiber";
 import { Html, useProgress, useGLTFLoader } from "drei";
-
 // React Spring
 import { a, useTransition } from "@react-spring/web";
 //Intersection Observer
@@ -99,7 +95,7 @@ function Loader() {
   );
 }
 
-export default function Home() {
+export default function Home({user}) {
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
@@ -108,7 +104,6 @@ export default function Home() {
 
   return (
     <>
-      <Header/>
       {/* R3F Canvas */}
       <Canvas
         concurrent

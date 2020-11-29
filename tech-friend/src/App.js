@@ -8,6 +8,8 @@ import Discover from './pages/discover';
 import Donation from './pages/donation';
 import Login from './pages/login';
 import About from './pages/about';
+//Components
+import Header from "./components/header";
 //App
 import { auth } from './firebase';
 
@@ -29,14 +31,16 @@ const App = () => {
       unsubscribe();
     }
   }, [user]);
+  
   return (
     <Router>
       <AnimatePresence initial={false} exitBeforeEnter>
-        <Route exact path='/' render={() => <Home user={user ? user : null}/>}/>
-        <Route exact path='/login' render={() => <Login user={user ? user : null}/>}/>
-        <Route exact path='/about' render={() => <About user={user ? user : null}/>}/>
-        <Route exact path='/discover' render={() => <Discover user={user ? user : null}/>}/>
-        <Route exact path='/donation' render={() => <Donation user={user ? user : null}/>}/>
+        <Header key='Header' user={user ? user : null}/>
+        <Route key='Home' exact path='/' render={() => <Home user={user ? user : null}/>}/>
+        <Route key='Login' exact path='/login' render={() => <Login user={user ? user : null}/>}/>
+        <Route key='About' exact path='/about' render={() => <About user={user ? user : null}/>}/>
+        <Route key='Discover' exact path='/discover' render={() => <Discover user={user ? user : null}/>}/>
+        <Route key='Donation' exact path='/donation' render={() => <Donation user={user ? user : null}/>}/>
       </AnimatePresence>
     </Router>
   );

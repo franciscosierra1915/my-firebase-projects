@@ -1,0 +1,59 @@
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frank-photo {
+    width: 25%;
+    height: auto;
+    margin: 15rem 5rem;
+    background: #f8f4e5;
+    padding: 5px 10px;
+    border: 2px solid black;
+    box-shadow: 15px 15px 1px #F7CE68, 15px 15px 1px 2px black;
+    min-width: 400px
+}
+
+.bio{
+    width: 60%;
+    height: auto;
+    text-align: center;
+    background: #f8f4e5;
+    padding: 1px 5px;
+    border: 2px solid black;
+    box-shadow: 15px 15px 1px #FBAB7E, 15px 15px 1px 2px black;
+    line-height: 28pt;
+    font-family: "Fjalla One";
+    font-size: 150%;
+    letter-spacing: 0.3rem;
+}
+
+@media only screen and (max-width: 1200px) 
+{ 
+    .about-container { 
+    display: grid;
+    align-items: center;
+    grid-gap: 1rem 1rem;  
+    grid-template-columns: 1fr; }
+    .bio {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-top: -5rem;
+    background: #f8f4e5;
+    padding: 5px 10px;
+    border: 2px solid black;
+    box-shadow: 15px 15px 1px #FBAB7E, 15px 15px 1px 2px black;
+    min-width: 400px;
+    line-height: 28pt;
+    font-family: "Fjalla One";
+    letter-spacing: 0.5rem;
+    }
+    .frank-photo{
+        margin: 15rem auto;
+        width: 50%;
+        height: auto;
+    }
+}
+
