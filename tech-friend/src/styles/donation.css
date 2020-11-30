@@ -11,7 +11,6 @@
   font-family: "Fjalla One";
   text-shadow: 1.5px 3px #000000;
   letter-spacing: 0.5rem;
-  
 }
 
 input {
@@ -68,5 +67,10 @@ input:-webkit-autofill:focus {
 
 h1{
   color: rgb(255, 255, 255);
+}
+
+.error-image-type {
+  color: #FBAB7E;
+  text-shadow: none;
 }
 

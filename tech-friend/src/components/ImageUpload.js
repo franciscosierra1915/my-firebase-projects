@@ -10,11 +10,18 @@ function ImageUpload({user}) {
 const [image, setImage] = useState(null);
 const [caption, setCaption] = useState('');
 const [progress, setProgress] = useState(0);
+const [error, setError] = useState(null);
 let history = useHistory();
+const types = ['image/png', 'image/jpeg'];
     
 const handleChange = (e) => {
-    if (e.target.files[0]) {
-        setImage(e.target.files[0])
+    let selected = e.target.files[0]
+    if ((selected && types.includes(selected.type))) {
+        setImage(selected);
+        setError(false);
+    } else {
+        setImage(null);
+        setError(true);
     }
 }
     
@@ -64,6 +71,7 @@ const handleUpload = () => {
 
 return (
     <div className='image-upload'>
+        { error && <p className='error-image-type'>Please select a PNG or JPEG image</p> }
         <progress style={{height: '50px'}} value={progress} max='100'/>
         <input className='choose-file' style={{color: '#808080'}} type='file' onChange={handleChange}/>
         <input type='text' placeholder='Describe your item...' value={caption} onChange={event => setCaption(event.target.value)}/>

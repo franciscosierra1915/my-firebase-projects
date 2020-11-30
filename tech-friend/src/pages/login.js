@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Login() {
+export default function Login({ user }) {
   
 
 //Scroll
@@ -65,23 +65,6 @@ const [openSignIn, setOpenSignIn] = useState(false);
 const [username, setUsername] = useState('');
 const [password, setPassword] = useState('');
 const [email, setEmail] = useState('');
-const [user, setUser] = useState(null);
-
-useEffect(() => {
-  const unsubscribe = auth.onAuthStateChanged((authUser) => {
-    if (authUser) {
-      // user had logged in
-      setUser(authUser)
-    } else {
-      //user had logged out...
-      setUser(null);
-    }
-  })
-  return () => {
-    // perform some cleanup actions 
-    unsubscribe();
-  }
-}, [user, username]);
 
 const signUp = (event) => {
   event.preventDefault();
@@ -114,28 +97,31 @@ const signIn = (event) => {
       <div className='login'>
         <Modal className="modal" open={open} onClose={() => setOpen(false)}>
           <div style={modalStyle} className={classes.paper}>
-            <form className='app_signup'>
+            <form className='app_signup' style={{marginTop: '-10%'}}>
               <center>
                 <img src={logo}
                 className='app_headerImage'
                 alt='instagram_logo_header'/>
                 <Input
+                style={{margin: '10px', width: '100%'}}
                 placeholder='email'
                 type='text'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
                 <Input
+                style={{margin: '10px', width: '100%'}}
                 placeholder='password'
                 type='password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}/>
                 <Input
+                style={{margin: '10px', width: '100%'}}
                 placeholder='username'
                 type='username'
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}/>
-                <Button type='submit' onClick={signUp} style={{ background: '#F7CE68', color: '#F8F8FF'}}>Sign Up</Button>
+                <Button type='submit' onClick={signUp} style={{ background: '#F7CE68', color: '#F8F8FF', margin: '10px'}}>Sign Up</Button>
                 </center>
                 </form>
                 </div>
@@ -148,16 +134,18 @@ const signIn = (event) => {
                         className='app_headerImage'
                         alt='instagram_logo_header'/>
                         <Input
+                        style={{margin: '10px', width: '100%'}}
                         placeholder='email'
                         type='text'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}/>
                         <Input
+                        style={{margin: '10px', width: '100%'}}
                         placeholder='password'
                         type='password'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}/>
-                        <Button type='submit'onClick={signIn} style={{ background: '#F7CE68', color: '#F8F8FF'}}>Sign In</Button>
+                        <Button type='submit'onClick={signIn} style={{ background: '#F7CE68', color: '#F8F8FF', margin: '10px'}}>Sign In</Button>
                         </center>
                         </form>
                         </div>

@@ -15,7 +15,24 @@ export default function About() {
             <div className="about-container">
               <img alt='frank-bio-pic' className="frank-photo" src={photo}></img>
               <div className="bio">
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+                <p>My name is Francisco Sierra, but you can call me Frank. 
+                  I’m a Frontend Developer who loves video, photo and animation. 
+                  At heart, I'm a storyteller: I studied poetry in high school, 
+                  Graphic Design in my home country Venezuela <span role="img" aria-label="venezuela">🇻🇪</span>, 
+                  Film Production at Miami Dade College 
+                  and Software Engineering at Flatiron School.
+                  I love telling stories using the latest technologies.
+                  </p>
+                  <p>I built this site using React and Firebase. 
+                    I also used Three.js, React Three Fiber, Drei, Sketchfab and React Intersection Observer to make it look nifty. 
+                    I hope people can use Tech Friend to donate tech items to those who need them, but can’t afford them.
+                  </p>
+                  <p>If you like this site, let me know at:</p>
+                  <a href='https://www.linkedin.com/in/francisco-sierra-munoz/' target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn-Icon"/></a>
+                  <a href='https://github.com/franciscosierra1915' target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/fluent/48/000000/github.png" alt="Github-Icon"/></a>
+                  <a href='https://www.franciscosierra.site' target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/dotty/80/000000/portfolio.png" alt="Portfolio-Icon" style={{width: '48px'}}/></a>
+                  <a href='https://www.youtube.com/channel/UCFDp5xoqqDfeiJwyHLkJk7A?view_as=subscriber' target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/cotton/64/000000/youtube.png" alt="Youtube-Icon" style={{width: '48px'}}/></a>
+                  <a href='mailto:fransierra.s.15@gmail.com' target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/dusk/64/000000/email.png" alt="Email-Icon" style={{width: '45px'}}/></a>
               </div>
             </div>
           </div>

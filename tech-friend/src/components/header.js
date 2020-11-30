@@ -3,7 +3,7 @@ import logo from '../images/tech-friend-logo.png'
 //Redirect
 import { useHistory } from "react-router-dom";
 
-export default function Header({user}) {
+export default function Header({ user }) {
 
   let history = useHistory();
 
@@ -24,7 +24,7 @@ export default function Header({user}) {
             </li>
           </ul>
           <select onChange={(e) => history.push(e.target.value)}>
-            <option value=''>Menu</option> 
+            <option value='/'>Home</option> 
             <option value='/discover'>Discover</option> 
             <option value='/login'>{user ? 'Logout' : 'Login'}</option>
             <option value='/about'>About Frank</option> 
@@ -34,3 +34,4 @@ export default function Header({user}) {
     </header>
   );
 }
+

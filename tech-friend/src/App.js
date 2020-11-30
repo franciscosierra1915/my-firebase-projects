@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-
 //Pages
 import Home from './pages/home';
 import Discover from './pages/discover';
@@ -14,6 +13,7 @@ import Header from "./components/header";
 import { auth } from './firebase';
 
 const App = () => {
+  
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -35,15 +35,17 @@ const App = () => {
   return (
     <Router>
       <AnimatePresence initial={false} exitBeforeEnter>
-        <Header key='Header' user={user ? user : null}/>
-        <Route key='Home' exact path='/' render={() => <Home user={user ? user : null}/>}/>
-        <Route key='Login' exact path='/login' render={() => <Login user={user ? user : null}/>}/>
-        <Route key='About' exact path='/about' render={() => <About user={user ? user : null}/>}/>
-        <Route key='Discover' exact path='/discover' render={() => <Discover user={user ? user : null}/>}/>
-        <Route key='Donation' exact path='/donation' render={() => <Donation user={user ? user : null}/>}/>
+        <Header key='Header' user={user && user}/>
+        <Route key='Home' exact path='/' render={() => <Home user={user && user}/>}/>
+        <Route key='Login' exact path='/login' render={() => <Login user={user && user}/>}/>
+        <Route key='About' exact path='/about' render={() => <About user={user && user}/>}/>
+        <Route key='Discover' exact path='/discover' render={() => <Discover user={user && user}/>}/>
+        <Route key='Donation' exact path='/donation' render={() => <Donation user={user && user}/>}/>
       </AnimatePresence>
     </Router>
   );
 };
 
 export default App;
+
+
