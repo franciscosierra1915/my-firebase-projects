@@ -13,12 +13,9 @@ export default function Donation({ user }) {
 
   return (
     <>
-      <div
-        className='scrollArea'
-        ref={scrollArea}
-        onScroll={onScroll}>
+      <div className='scrollArea' ref={scrollArea} onScroll={onScroll}>
         <div className="donate">
-        {user ? (<ImageUpload user={user}/>) : <h1>Please login</h1>}
+        {user ? <ImageUpload user={user}/> : <h1>Please login</h1>}
         </div>
       </div>
     </>

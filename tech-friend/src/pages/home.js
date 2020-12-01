@@ -95,7 +95,7 @@ function Loader() {
   );
 }
 
-export default function Home({user}) {
+export default function Home() {
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();

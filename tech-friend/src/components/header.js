@@ -4,7 +4,7 @@ import logo from '../images/tech-friend-logo.png'
 import { useHistory } from "react-router-dom";
 
 export default function Header({ user }) {
-
+  
   let history = useHistory();
 
   return (

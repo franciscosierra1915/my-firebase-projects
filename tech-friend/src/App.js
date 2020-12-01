@@ -34,13 +34,13 @@ const App = () => {
   
   return (
     <Router>
+      <Header key='Header' user={user}/>
       <AnimatePresence initial={false} exitBeforeEnter>
-        <Header key='Header' user={user && user}/>
-        <Route key='Home' exact path='/' render={() => <Home user={user && user}/>}/>
-        <Route key='Login' exact path='/login' render={() => <Login user={user && user}/>}/>
-        <Route key='About' exact path='/about' render={() => <About user={user && user}/>}/>
-        <Route key='Discover' exact path='/discover' render={() => <Discover user={user && user}/>}/>
-        <Route key='Donation' exact path='/donation' render={() => <Donation user={user && user}/>}/>
+        <Route key='Home' exact path='/' render={() => <Home/>}/>
+        <Route key='Login' exact path='/login' render={() => <Login user={user}/>}/>
+        <Route key='About' exact path='/about' render={() => <About/>}/>
+        <Route key='Discover' exact path='/discover' render={() => <Discover user={user}/>}/>
+        <Route key='Donation' exact path='/donation' render={() => <Donation user={user}/>}/>
       </AnimatePresence>
     </Router>
   );

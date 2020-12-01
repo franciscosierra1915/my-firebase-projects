@@ -28,14 +28,18 @@ export default function Discover({user}) {
   
   return (
     <> 
-      <div
-        className='scrollArea'
-        ref={scrollArea}
-        onScroll={onScroll}>
+      <div className='scrollArea' ref={scrollArea} onScroll={onScroll}>
         <div className="posts-container">
         {
           posts.map(({ id, post }) => (
-            <Post avatar={post.userAvatar} postId={id} key={id} user={user} username={post.username} imageUrl={post.imageUrl} caption={post.caption}/>
+            <Post 
+            avatar={post.userAvatar} 
+            postId={id} 
+            key={id} 
+            user={user} 
+            username={post.username} 
+            imageUrl={post.imageUrl} 
+            caption={post.caption}/>
             ))
         }
         </div>
