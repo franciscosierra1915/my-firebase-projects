@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     width: 500,
     height: 500,
-    backgroundColor: '#0093E9',
+    backgroundColor: '#F88379',
     padding: theme.spacing(15, 20, 3),
   },
 }));
