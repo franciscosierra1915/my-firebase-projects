@@ -12,7 +12,7 @@ const firebaseApp = firebase.initializeApp({
   });
 
 const db = firebaseApp.firestore();
-const auth = firebase.auth()
+const auth = firebase.auth();
 const storage = firebase.storage();
 const analytics = firebase.analytics();
 

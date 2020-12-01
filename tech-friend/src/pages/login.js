@@ -90,10 +90,7 @@ const signIn = (event) => {
 
   return (
     <>
-    <div
-    className='scrollArea'
-    ref={scrollArea}
-    onScroll={onScroll}>
+    <div className='scrollArea' ref={scrollArea} onScroll={onScroll}>
       <div className='login'>
         <Modal className="modal" open={open} onClose={() => setOpen(false)}>
           <div style={modalStyle} className={classes.paper}>
@@ -157,7 +154,7 @@ const signIn = (event) => {
                         (<div className='app_loginContainer'>
                             <Button className="login-buttons" onClick={() => setOpenSignIn(true)} style={{color: '#F8F8FF'}}>Sign In</Button>
                             <Button className="login-buttons" onClick={() => setOpen(true)} style={{color: '#F8F8FF'}}>Sign Up</Button>
-                          </div>
+                        </div>
                         )
                         }
       </div>

@@ -12,6 +12,8 @@ import { Html, useProgress, useGLTFLoader } from "drei";
 import { a, useTransition } from "@react-spring/web";
 //Intersection Observer
 import { useInView } from "react-intersection-observer";
+//Redirect
+import { useHistory } from "react-router-dom";
 
 function Model({ url }) {
   const gltf = useGLTFLoader(url, true);
@@ -96,6 +98,9 @@ function Loader() {
 }
 
 export default function Home() {
+
+  let history = useHistory();
+
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
@@ -114,51 +119,42 @@ export default function Home() {
         <Suspense fallback={null}>
           <HTMLContent
             domContent={domContent}
-            bgColor='#f15946'
+            bgColor='#468af1'
             modelPath='/camera-dos.gltf'
             positionX={0}
             positionY={250}
             positionZ={-100}>
-            <a href='/donation'>
-            <span>DONATE</span>
-            <span>CAMERA</span>
-            </a>
+            <span className='span-donation' onClick={() => history.push('/donation')}>DONATE</span>
+            <span className='span-donation' onClick={() => history.push('/donation')}>CAMERA</span>
           </HTMLContent>
           <HTMLContent
             domContent={domContent}
-            bgColor='#FEBE10'
+            // bgColor='#EEC900'
+            bgColor='#DDA0DD'
             modelPath='/laptop.gltf'
             positionX={0}
             positionY={0}
             positionZ={50}>
-              <a href='/donation'>
-            <span id='laptop'>
+            <span id='laptop' onClick={() => history.push('/donation')}>
             DONATE
             <br/>
             LAPTOP
             </span>
-            </a>
           </HTMLContent>
           <HTMLContent
             domContent={domContent}
-            bgColor='#468af1'
+            bgColor='#f15946'
             modelPath='/iphone.gltf'
             positionX={0}
             positionY={-250}
             positionZ={-30}>
-              <a href='/donation'>
-            <span>DONATE</span>
-            <span>PHONE</span>
-            </a>
+            <span className='span-donation'onClick={() => history.push('/donation')}>DONATE</span>
+            <span className='span-donation' onClick={() => history.push('/donation')}>PHONE</span>
           </HTMLContent>
         </Suspense>
       </Canvas>
       <Loader />
-      <div
-        className='scrollArea'
-        ref={scrollArea}
-        onScroll={onScroll}
-        {...events}>
+      <div className='scrollArea' ref={scrollArea} onScroll={onScroll} {...events}>
         <div style={{ position: "sticky", top: 0 }} ref={domContent} />
         <div style={{ height: `${state.pages * 100}vh` }} />
       </div>

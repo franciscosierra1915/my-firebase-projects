@@ -75,7 +75,7 @@ header {
           list-style: none;
           margin: 0 60px;
           &.btn {
-            a {
+            .react-links {
               color: #fff;
               font-weight: 600;
               background: #FEBE10;
@@ -85,7 +85,7 @@ header {
               border-radius: 2px;
             }
           }
-          a {
+          .react-links {
             text-transform: capitalize;
             text-decoration: none;
             color: #fff;
@@ -124,7 +124,13 @@ header {
 
 #laptop {
   margin-top: 290px;
+  cursor: pointer;
 }
+
+.span-donation {
+  cursor: pointer;
+}
+
 
 .loading {
   position: absolute;
@@ -165,5 +171,4 @@ nav select {
 @media (max-width: 960px) {
   nav li     { display: none; }
   nav select { display: inline-block; }
-  // header {   background-color: #f15946; }
 }
