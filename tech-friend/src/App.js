@@ -33,8 +33,6 @@ const App = () => {
     }
   }, []);
 
-  console.log(user)
-
   return (
     <Router>
       <Header key='Header' session={user ? 'Logout' : 'Login'}/>
