@@ -171,4 +171,29 @@ nav select {
 @media (max-width: 960px) {
   nav li     { display: none; }
   nav select { display: inline-block; }
+  // .header-inner{
+  //   /* Reverse the axis of the header, making it vertical. */
+  //   flex-direction: column;
+  
+  //   /* Align items to the begining (the left) of the header. */
+  //   align-items: flex-start;
+
+  //   justify-content: space-between;
+  //   .logo{
+  //     margin-bottom: 50px;
+  //   }
+  //   .btn {
+  //     .react-links {
+  //       color: none;
+  //       font-weight: none;
+  //       background: none;
+  //       padding: none;
+  //       border: none;
+  //       box-shadow: none;
+  //       border-radius: none;
+  //       margin: none;
+  //     }
+  //   }
+  // }
 }
+
